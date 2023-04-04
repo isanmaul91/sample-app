@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DetailVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="Y6W-OH-hqX" customClass="DetailVC" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f5e-eY-AaH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="150"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="f5e-eY-AaH" secondAttribute="height" multiplier="69:25" id="cyx-UJ-fTg"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="G9s-2d-uSV">
+                                <rect key="frame" x="16" y="60.5" width="40" height="39"/>
+                                <color key="tintColor" red="0.30196078430000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="it7-tE-tT6"/>
+                                    <constraint firstAttribute="height" constant="40" id="nJN-F2-E4L"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocktar Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-Az-Ncb">
+                                <rect key="frame" x="16" y="202" width="336" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ce7-Uc-jUS">
+                                <rect key="frame" x="368" y="203.5" width="30" height="27.5"/>
+                                <color key="tintColor" red="0.31764705879999999" green="0.3803921569" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="J2x-7d-E6k"/>
+                                    <constraint firstAttribute="width" constant="30" id="Jyk-As-3tT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vampire: The Masquerade - Bloodlines 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLv-fC-Z8e">
+                                <rect key="frame" x="16" y="223" width="336" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release date 2022-08-20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPg-NT-ALi">
+                                <rect key="frame" x="16" y="247.5" width="168" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pWL-Fd-zFG">
+                                <rect key="frame" x="16" y="268" width="20" height="20"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="7bB-jC-1bc"/>
+                                    <constraint firstAttribute="width" constant="20" id="cDG-VW-bOu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.57" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLc-t8-3Jz">
+                                <rect key="frame" x="40" y="270" width="28.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamecontroller" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UDW-J8-aJg">
+                                <rect key="frame" x="76.5" y="269.5" width="25" height="17.5"/>
+                                <color key="tintColor" red="0.31764705879999999" green="0.3803921569" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="1yW-hY-YI3"/>
+                                    <constraint firstAttribute="height" constant="20" id="jxh-74-bxE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200 played" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ut-ng-cic">
+                                <rect key="frame" x="105.5" y="270" width="72" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-gq-RhJ">
+                                <rect key="frame" x="16" y="304.5" width="382" height="184"/>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ce7-Uc-jUS" secondAttribute="trailing" constant="16" id="0Ha-eC-71F"/>
+                            <constraint firstItem="pWL-Fd-zFG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="1OA-rl-6FN"/>
+                            <constraint firstItem="UDW-J8-aJg" firstAttribute="leading" secondItem="TLc-t8-3Jz" secondAttribute="trailing" constant="8" id="1ZW-JH-aoE"/>
+                            <constraint firstItem="NLv-fC-Z8e" firstAttribute="top" secondItem="DQM-Az-Ncb" secondAttribute="bottom" constant="4" id="3vh-J2-vq1"/>
+                            <constraint firstItem="2ut-ng-cic" firstAttribute="leading" secondItem="UDW-J8-aJg" secondAttribute="trailing" constant="4" id="53V-TM-hGO"/>
+                            <constraint firstItem="ce7-Uc-jUS" firstAttribute="leading" secondItem="NLv-fC-Z8e" secondAttribute="trailing" constant="16" id="6Ux-ny-ujW"/>
+                            <constraint firstItem="DQM-Az-Ncb" firstAttribute="top" secondItem="f5e-eY-AaH" secondAttribute="bottom" constant="8" id="G5q-Ma-9Z1"/>
+                            <constraint firstItem="NLv-fC-Z8e" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="JmG-os-9zM"/>
+                            <constraint firstItem="Ksm-gq-RhJ" firstAttribute="top" secondItem="pWL-Fd-zFG" secondAttribute="bottom" constant="16" id="KMY-dO-TzR"/>
+                            <constraint firstItem="nPg-NT-ALi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="KSO-6h-B89"/>
+                            <constraint firstItem="G9s-2d-uSV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="MaW-bq-1ub"/>
+                            <constraint firstItem="ce7-Uc-jUS" firstAttribute="leading" secondItem="DQM-Az-Ncb" secondAttribute="trailing" constant="16" id="Noi-1n-93s"/>
+                            <constraint firstItem="Ksm-gq-RhJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ODQ-q2-DgP"/>
+                            <constraint firstItem="f5e-eY-AaH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="PqW-eO-GLz"/>
+                            <constraint firstItem="TLc-t8-3Jz" firstAttribute="leading" secondItem="pWL-Fd-zFG" secondAttribute="trailing" constant="4" id="Q1U-w5-m6Z"/>
+                            <constraint firstItem="f5e-eY-AaH" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Yit-YM-xlo"/>
+                            <constraint firstItem="G9s-2d-uSV" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="co6-Um-kON"/>
+                            <constraint firstItem="TLc-t8-3Jz" firstAttribute="centerY" secondItem="pWL-Fd-zFG" secondAttribute="centerY" id="eha-9Y-uNl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="f5e-eY-AaH" secondAttribute="trailing" id="ezt-cs-qO1"/>
+                            <constraint firstItem="ce7-Uc-jUS" firstAttribute="top" secondItem="f5e-eY-AaH" secondAttribute="bottom" constant="8" id="h3T-8n-84f"/>
+                            <constraint firstItem="pWL-Fd-zFG" firstAttribute="top" secondItem="nPg-NT-ALi" secondAttribute="bottom" constant="4" id="ilY-aB-Rxp"/>
+                            <constraint firstItem="UDW-J8-aJg" firstAttribute="centerY" secondItem="pWL-Fd-zFG" secondAttribute="centerY" id="kGy-KM-03E"/>
+                            <constraint firstItem="nPg-NT-ALi" firstAttribute="top" secondItem="NLv-fC-Z8e" secondAttribute="bottom" constant="4" id="lMm-CG-jGw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ksm-gq-RhJ" secondAttribute="trailing" constant="16" id="m6P-CF-afS"/>
+                            <constraint firstItem="DQM-Az-Ncb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="oDD-p8-ZDE"/>
+                            <constraint firstItem="2ut-ng-cic" firstAttribute="centerY" secondItem="UDW-J8-aJg" secondAttribute="centerY" id="xrJ-bf-KMB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="G9s-2d-uSV" id="IgV-zJ-Wcn"/>
+                        <outlet property="descriptionLabel" destination="Ksm-gq-RhJ" id="Up5-Va-2ai"/>
+                        <outlet property="favoriteButton" destination="ce7-Uc-jUS" id="9tc-98-hea"/>
+                        <outlet property="gameImage" destination="f5e-eY-AaH" id="vyw-3t-chw"/>
+                        <outlet property="name" destination="NLv-fC-Z8e" id="4Lh-A1-YzG"/>
+                        <outlet property="playtime" destination="2ut-ng-cic" id="kt0-KJ-ckL"/>
+                        <outlet property="publisher" destination="DQM-Az-Ncb" id="EdQ-Ql-h3d"/>
+                        <outlet property="rating" destination="TLc-t8-3Jz" id="uXE-xy-Sr0"/>
+                        <outlet property="releaseDate" destination="nPg-NT-ALi" id="qdA-w1-NzJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="85.714285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gamecontroller" catalog="system" width="128" height="80"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

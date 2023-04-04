@@ -16,13 +16,18 @@ class GameItemTVC: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        gameImage.layer.cornerRadius = 5
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        gameImage.image = nil
+    }
+    
+    func setupUI(game: GameModel) {
+        name.text = game.name
+        releaseDate.text = "Release date \(game.released)"
+        rating.text = "\(game.rating)"
+        gameImage.loadUrl(from: game.backgroundImage, contentMode: .scaleAspectFill)
+    }
 }
