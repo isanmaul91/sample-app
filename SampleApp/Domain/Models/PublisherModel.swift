@@ -8,8 +8,9 @@
 import Foundation
 
 struct PublisherModel: Codable, Equatable {
-    let name: String
+    var name: String = ""
     
+    init() {}
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decodeIfPresent(String.self, forKey: .name) ?? ""

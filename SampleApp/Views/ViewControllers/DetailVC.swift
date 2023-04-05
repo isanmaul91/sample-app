@@ -78,9 +78,9 @@ class DetailVC: UIViewController {
     private func render() {
         name.text = viewModel.name
         publisher.text = viewModel.publisherName
-        releaseDate.text = viewModel.released
-        rating.text = viewModel.rating
-        playtime.text = viewModel.playtime
+        releaseDate.text = "Release date \(viewModel.released)"
+        rating.text = "\(viewModel.rating)"
+        playtime.text = "\(viewModel.playtime) played"
         descriptionLabel.text = viewModel.descriptionRaw
         gameImage.loadUrl(from: viewModel.backgroundImage, contentMode: .scaleAspectFill)
         setLoveImage()

@@ -8,14 +8,14 @@
 import Foundation
 
 struct GameModel: Codable, Equatable {
-    let id: Int
-    let backgroundImage: String
-    let name: String
-    let released: String
-    let rating: Double
-    let publishers: [PublisherModel]
-    let playtime: Int
-    let descriptionRaw: String
+    var id: Int = 0
+    var backgroundImage: String = ""
+    var name: String = ""
+    var released: String = ""
+    var rating: Double = 0
+    var publishers: [PublisherModel] = []
+    var playtime: Int = 0
+    var descriptionRaw: String = ""
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -39,4 +39,6 @@ struct GameModel: Codable, Equatable {
         descriptionRaw = try values.decodeIfPresent(String.self, forKey: .descriptionRaw) ?? ""
         publishers = try values.decodeIfPresent([PublisherModel].self, forKey: .publishers) ?? []
     }
+    
+    init() {}
 }

@@ -63,4 +63,20 @@ class GameStorage {
             completion(nil, GameStorageError.cannotRemove)
         }
     }
+    
+    func checkFavoriteItem(gamesId: Int, completion: @escaping (GameEntity?, GameStorageError?) -> ()) {
+        let fetchRequest = NSFetchRequest<GameEntity>(entityName: "GameEntity")
+        fetchRequest.predicate = NSPredicate(format: "id == %d", gamesId)
+
+        do {
+            let fetchedResults = try context.fetch(fetchRequest)
+            if let result = fetchedResults.first {
+                completion(result, nil)
+            } else {
+                completion(nil, GameStorageError.cannotFind)
+            }
+        } catch {
+            completion(nil, GameStorageError.cannotFind)
+        }
+    }
 }

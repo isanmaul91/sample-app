@@ -22,9 +22,13 @@ class APIService: APIServiceProtocol {
         urlRequest.httpMethod = "GET"
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest) { data, resp, err in
+            guard let data = data else {
+                completion(nil, err)
+                return
+            }
             let decoder = JSONDecoder()
             do {
-                let gamesListModel: GamesListModel = try decoder.decode(GamesListModel.self, from: data!)
+                let gamesListModel: GamesListModel = try decoder.decode(GamesListModel.self, from: data)
                 completion(gamesListModel, nil)
             } catch {
                 completion(nil, err)
@@ -40,9 +44,13 @@ class APIService: APIServiceProtocol {
         urlRequest.httpMethod = "GET"
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest) { data, resp, err in
+            guard let data = data else {
+                completion(nil, err)
+                return
+            }
             let decoder = JSONDecoder()
             do {
-                let gameModel: GameModel = try decoder.decode(GameModel.self, from: data!)
+                let gameModel: GameModel = try decoder.decode(GameModel.self, from: data)
                 completion(gameModel, nil)
             } catch {
                 completion(nil, err)
@@ -59,9 +67,13 @@ class APIService: APIServiceProtocol {
         urlRequest.httpMethod = "GET"
         let session = URLSession.shared
         let task = session.dataTask(with: urlRequest) { data, resp, err in
+            guard let data = data else {
+                completion(nil, err)
+                return
+            }
             let decoder = JSONDecoder()
             do {
-                let gamesListModel: GamesListModel = try decoder.decode(GamesListModel.self, from: data!)
+                let gamesListModel: GamesListModel = try decoder.decode(GamesListModel.self, from: data)
                 completion(gamesListModel, nil)
             } catch {
                 completion(nil, err)

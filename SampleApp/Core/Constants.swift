@@ -32,8 +32,9 @@ enum GameStorageError: Error {
     case cannotFetch
     case cannotSave
     case cannotRemove
+    case cannotFind
 }
 
-enum MockError: Error {
+enum RequestError: Error {
     case someError
 }

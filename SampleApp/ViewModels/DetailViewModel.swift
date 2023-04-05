@@ -13,9 +13,9 @@ protocol DetailViewModelProtocol {
     var backgroundImage: String { get }
     var name: String { get }
     var released: String { get }
-    var rating: String { get }
+    var rating: Double { get }
     var publisherName: String { get }
-    var playtime: String { get }
+    var playtime: Int { get }
     var descriptionRaw: String { get }
     var isFavorite: Bool { get }
     func set(_ gameId: Int)
@@ -29,14 +29,14 @@ class DetailViewModel: DetailViewModelProtocol {
     var backgroundImage: String = ""
     var name: String = ""
     var released: String = ""
-    var rating: String = ""
+    var rating: Double = 0
     var publisherName: String = ""
-    var playtime: String = ""
+    var playtime: Int = 0
     var descriptionRaw: String = ""
     var isFavorite: Bool = false
     private var apiService: APIServiceProtocol
-    private var game: GameModel?
     private var gameStorage: GameStorage
+    private var gameModel: GameModel?
     private var gameId: Int = 0
     
     init(apiService: APIServiceProtocol = APIService(),
@@ -50,16 +50,12 @@ class DetailViewModel: DetailViewModelProtocol {
     }
     
     private func setFavorite() {
-        isFavorite = false
-        gameStorage.getItems { [weak self] items, error in
+        gameStorage.checkFavoriteItem(gamesId: gameId) { [weak self] resp, err in
             guard let ws = self else { return }
-            if let items = items {
-                for item in items {
-                    if item.id == Int64(ws.gameId) {
-                        ws.isFavorite = true
-                        break
-                    }
-                }
+            if let _ = resp {
+                ws.isFavorite = true
+            } else {
+                ws.isFavorite = false
             }
         }
     }
@@ -74,7 +70,7 @@ class DetailViewModel: DetailViewModelProtocol {
                 }
             }
         } else {
-            guard let game = game else { return }
+            guard let game = gameModel else { return }
             gameStorage.addFavoriteItem(game: game) { [weak self] resp, err in
                 guard let ws = self else { return }
                 if let _ = resp {
@@ -93,22 +89,52 @@ class DetailViewModel: DetailViewModelProtocol {
                 ws.requestState.value = .success
             } else if let error = error {
                 ws.requestState.value = .error
+                ws.getFromStorage()
                 print(error.localizedDescription)
             }
         })
     }
     
+    func getFromStorage() {
+        gameStorage.checkFavoriteItem(gamesId: gameId) { [weak self] resp, err in
+            guard let ws = self else { return }
+            if let item = resp {
+                ws.mappingToModel(from: item)
+                ws.requestState.value = .success
+            } else if let err = err {
+                ws.requestState.value = .error
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
     func mappingData(from model: GameModel) {
-        game = model
+        gameModel = model
         backgroundImage = model.backgroundImage
         name = model.name
         if let publisher = model.publishers[safe: 0] {
             publisherName = publisher.name
         }
-        released = "Release date \(model.released)"
-        rating = "\(model.rating)"
-        playtime = "\(model.playtime) played"
+        released = model.released
+        rating = model.rating
+        playtime = model.playtime
         descriptionRaw = model.descriptionRaw
         setFavorite()
+    }
+    
+    func mappingToModel(from entity: GameEntity) {
+        var game: GameModel = .init()
+        game.id = Int(entity.id)
+        game.name = entity.name ?? ""
+        game.backgroundImage = entity.backgroundImage ?? ""
+        game.released = entity.released ?? ""
+        game.rating = entity.rating
+        game.playtime = Int(entity.playtime)
+        game.descriptionRaw = entity.descriptionRaw ?? ""
+        var publisher: PublisherModel = .init()
+        publisher.name = publisherName
+        game.publishers.append(publisher)
+        isFavorite = true
+        mappingData(from: game)
     }
 }
