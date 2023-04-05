@@ -13,7 +13,7 @@ struct GameModel: Codable, Equatable {
     let name: String
     let released: String
     let rating: Double
-    let publishers: [PublisherModel]?
+    let publishers: [PublisherModel]
     let playtime: Int
     let descriptionRaw: String
     
@@ -37,6 +37,6 @@ struct GameModel: Codable, Equatable {
         rating = try values.decodeIfPresent(Double.self, forKey: .rating) ?? 0.0
         playtime = try values.decodeIfPresent(Int.self, forKey: .playtime) ?? 0
         descriptionRaw = try values.decodeIfPresent(String.self, forKey: .descriptionRaw) ?? ""
-        publishers = try values.decodeIfPresent([PublisherModel].self, forKey: .publishers)
+        publishers = try values.decodeIfPresent([PublisherModel].self, forKey: .publishers) ?? []
     }
 }

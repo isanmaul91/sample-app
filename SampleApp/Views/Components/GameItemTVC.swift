@@ -30,4 +30,14 @@ class GameItemTVC: UITableViewCell {
         rating.text = "\(game.rating)"
         gameImage.loadUrl(from: game.backgroundImage, contentMode: .scaleAspectFill)
     }
+    
+    func setupUI(entity: GameEntity) {
+        name.text = entity.name
+        releaseDate.text = "Release date \(entity.released ?? "")"
+        rating.text = "\(entity.rating)"
+        if let imageUrl = entity.backgroundImage {
+            gameImage.loadUrl(from: imageUrl, contentMode: .scaleAspectFill)
+        }
+        
+    }
 }

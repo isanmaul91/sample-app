@@ -28,6 +28,12 @@ enum RequestState {
 
 typealias VoidClosure = () -> Void
 
+enum GameStorageError: Error {
+    case cannotFetch
+    case cannotSave
+    case cannotRemove
+}
+
 enum MockError: Error {
     case someError
 }

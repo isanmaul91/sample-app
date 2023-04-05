@@ -24,10 +24,17 @@ class HomeVC: UIViewController {
     }
     
     private func setupNavBar() {
+        navigationItem.backButtonDisplayMode = .minimal
         navigationItem.title = "Games For You"
-        let button: UIBarButtonItem = .init(barButtonSystemItem: .search, target: nil, action: nil)
+        let button: UIBarButtonItem = .init(barButtonSystemItem: .search,
+                                            target: self,
+                                            action: #selector(searchButtonClicked))
         button.tintColor = UIColor(red: 0.29, green: 0.33, blue: 0.55, alpha: 1.00)
         navigationItem.rightBarButtonItem = button
+    }
+    
+    @objc func searchButtonClicked() {
+        goToSearchScreen()
     }
     
     private func setupTableView() {
@@ -47,11 +54,17 @@ class HomeVC: UIViewController {
         }
     }
     
-    func goToDetailScreen(_ gameId: Int) {
+    private func goToDetailScreen(_ gameId: Int) {
         let storyboard: UIStoryboard = .init(name: "Detail", bundle: nil)
         let vc: DetailVC = storyboard.instantiateViewController(withIdentifier: "Detail") as! DetailVC
         vc.set(gameId)
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    private func goToSearchScreen() {
+        let storyboard: UIStoryboard = .init(name: "Search", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Search")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
