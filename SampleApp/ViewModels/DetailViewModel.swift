@@ -49,6 +49,10 @@ class DetailViewModel: DetailViewModelProtocol {
         self.gameId = gameId
     }
     
+    func set(_ gameModel: GameModel) {
+        self.gameModel = gameModel
+    }
+    
     private func setFavorite() {
         gameStorage.checkFavoriteItem(gamesId: gameId) { [weak self] resp, err in
             guard let ws = self else { return }
@@ -89,27 +93,13 @@ class DetailViewModel: DetailViewModelProtocol {
                 ws.requestState.value = .success
             } else if let error = error {
                 ws.requestState.value = .error
-                ws.getFromStorage()
                 print(error.localizedDescription)
             }
         })
     }
     
-    func getFromStorage() {
-        gameStorage.checkFavoriteItem(gamesId: gameId) { [weak self] resp, err in
-            guard let ws = self else { return }
-            if let item = resp {
-                ws.mappingToModel(from: item)
-                ws.requestState.value = .success
-            } else if let err = err {
-                ws.requestState.value = .error
-                print(err.localizedDescription)
-            }
-        }
-    }
-    
     func mappingData(from model: GameModel) {
-        gameModel = model
+        set(model)
         backgroundImage = model.backgroundImage
         name = model.name
         if let publisher = model.publishers[safe: 0] {
@@ -120,21 +110,5 @@ class DetailViewModel: DetailViewModelProtocol {
         playtime = model.playtime
         descriptionRaw = model.descriptionRaw
         setFavorite()
-    }
-    
-    func mappingToModel(from entity: GameEntity) {
-        var game: GameModel = .init()
-        game.id = Int(entity.id)
-        game.name = entity.name ?? ""
-        game.backgroundImage = entity.backgroundImage ?? ""
-        game.released = entity.released ?? ""
-        game.rating = entity.rating
-        game.playtime = Int(entity.playtime)
-        game.descriptionRaw = entity.descriptionRaw ?? ""
-        var publisher: PublisherModel = .init()
-        publisher.name = publisherName
-        game.publishers.append(publisher)
-        isFavorite = true
-        mappingData(from: game)
     }
 }

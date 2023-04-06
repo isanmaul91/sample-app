@@ -15,7 +15,7 @@ protocol SearchViewModelProtocol {
 
 class SearchViewModel: SearchViewModelProtocol {
     var gamesList: Observable<[GameModel]> = Observable(value: [])
-    private var requestState: Observable<RequestState> = Observable(value: .ready)
+    var requestState: Observable<RequestState> = Observable(value: .ready)
     private var apiService: APIServiceProtocol
     private var pageNumber: Int = 1
     private var query: String = ""
@@ -35,9 +35,9 @@ class SearchViewModel: SearchViewModelProtocol {
             if let resp = resp {
                 ws.requestState.value = .success
                 if ws.pageNumber == 1 {
-                    ws.gamesList.value = resp.results ?? []
+                    ws.gamesList.value = resp.results
                 } else {
-                    ws.gamesList.value.append(contentsOf: resp.results ?? [])
+                    ws.gamesList.value.append(contentsOf: resp.results)
                 }
                 ws.pageNumber += 1
             } else if let error = error {

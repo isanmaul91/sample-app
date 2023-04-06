@@ -22,25 +22,4 @@ extension Array {
             }
         }
     }
-    
-    /// This function append both singular objects and/or it's array in a variadic fashion
-    ///
-    /// - Parameter objects: the objects or an array of the objects
-    mutating func appendVar(_ objects: Any...) {
-        var temp: [Element] = []
-        
-        for object in objects {
-            if let object = object as? Element {
-                temp.append(object)
-            } else if let object = object as? [Element] {
-                temp.append(contentsOf: object)
-            } else {
-                #if DEBUG
-                fatalError("This type of object is not applicable.")
-                #endif
-            }
-        }
-        
-        append(contentsOf: temp)
-    }
 }

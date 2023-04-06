@@ -22,8 +22,9 @@ extension UIImageView {
                 }
             }.resume()
         }
-        func loadUrl(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-            guard let url = URL(string: link) else { return }
-            loadUrl(from: url, contentMode: mode)
-        }
+    
+    func loadUrl(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        loadUrl(from: url, contentMode: mode)
+    }
 }

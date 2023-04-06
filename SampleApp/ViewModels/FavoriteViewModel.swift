@@ -15,7 +15,7 @@ protocol FavoriteViewModelProtocol {
 
 class FavoriteViewModel: FavoriteViewModelProtocol {
     var gamesList: Observable<[GameEntity]> = Observable(value: [])
-    private var requestState: Observable<RequestState> = Observable(value: .ready)
+    var requestState: Observable<RequestState> = Observable(value: .ready)
     private var gameStorage: GameStorage
     
     init(gameStorage: GameStorage = .shared) {

@@ -8,10 +8,11 @@
 import Foundation
 
 struct GamesListModel: Codable, Equatable {
-    let results: [GameModel]?
+    var results: [GameModel] = []
     
+    init() {}
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        results = try values.decodeIfPresent([GameModel].self, forKey: .results)
+        results = try values.decodeIfPresent([GameModel].self, forKey: .results) ?? []
     }
 }

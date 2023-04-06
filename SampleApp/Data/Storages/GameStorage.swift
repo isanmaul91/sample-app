@@ -11,7 +11,7 @@ import CoreData
 class GameStorage {
     
     static var shared: GameStorage = GameStorage()
-    private init() {}
+    init() {}
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     

@@ -29,6 +29,12 @@
 		9166543629DD2613003BEF8C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166543529DD2613003BEF8C /* SearchViewModel.swift */; };
 		9166543829DD5915003BEF8C /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166543729DD5915003BEF8C /* FavoriteViewModel.swift */; };
 		9166543C29DD6E98003BEF8C /* GameStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166543B29DD6E98003BEF8C /* GameStorage.swift */; };
+		9166543F29DDDDAC003BEF8C /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166543E29DDDDAC003BEF8C /* HomeViewModelTest.swift */; };
+		9166544229DDDE3E003BEF8C /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166544129DDDE3E003BEF8C /* MockApiService.swift */; };
+		9166544429DDE447003BEF8C /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166544329DDE447003BEF8C /* SearchViewModelTest.swift */; };
+		9166544629DDE6AF003BEF8C /* FavoriteViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166544529DDE6AF003BEF8C /* FavoriteViewModelTest.swift */; };
+		9166544829DDE743003BEF8C /* MockGameStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166544729DDE743003BEF8C /* MockGameStorage.swift */; };
+		9166544A29DE69CC003BEF8C /* DetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166544929DE69CC003BEF8C /* DetailViewModelTest.swift */; };
 		91B691F829DBF1CE00245157 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B691F729DBF1CE00245157 /* Detail.storyboard */; };
 		91B691FB29DC546900245157 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B691FA29DC546900245157 /* Observable.swift */; };
 		91B691FD29DC551900245157 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B691FC29DC551900245157 /* Constants.swift */; };
@@ -85,6 +91,12 @@
 		9166543529DD2613003BEF8C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		9166543729DD5915003BEF8C /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		9166543B29DD6E98003BEF8C /* GameStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStorage.swift; sourceTree = "<group>"; };
+		9166543E29DDDDAC003BEF8C /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		9166544129DDDE3E003BEF8C /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
+		9166544329DDE447003BEF8C /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
+		9166544529DDE6AF003BEF8C /* FavoriteViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelTest.swift; sourceTree = "<group>"; };
+		9166544729DDE743003BEF8C /* MockGameStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGameStorage.swift; sourceTree = "<group>"; };
+		9166544929DE69CC003BEF8C /* DetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTest.swift; sourceTree = "<group>"; };
 		91B691F729DBF1CE00245157 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		91B691FA29DC546900245157 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		91B691FC29DC551900245157 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -161,6 +173,8 @@
 		9152210129DAE83300D1D7EA /* SampleAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				9166544029DDDE2E003BEF8C /* Mocks */,
+				9166543D29DDDD8F003BEF8C /* ViewModels */,
 				9152210229DAE83300D1D7EA /* SampleAppTests.swift */,
 			);
 			path = SampleAppTests;
@@ -234,6 +248,26 @@
 				9166543B29DD6E98003BEF8C /* GameStorage.swift */,
 			);
 			path = Storages;
+			sourceTree = "<group>";
+		};
+		9166543D29DDDD8F003BEF8C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9166543E29DDDDAC003BEF8C /* HomeViewModelTest.swift */,
+				9166544329DDE447003BEF8C /* SearchViewModelTest.swift */,
+				9166544529DDE6AF003BEF8C /* FavoriteViewModelTest.swift */,
+				9166544929DE69CC003BEF8C /* DetailViewModelTest.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9166544029DDDE2E003BEF8C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9166544129DDDE3E003BEF8C /* MockApiService.swift */,
+				9166544729DDE743003BEF8C /* MockGameStorage.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		91B691F929DC545E00245157 /* Core */ = {
@@ -456,7 +490,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9166544229DDDE3E003BEF8C /* MockApiService.swift in Sources */,
 				9152210329DAE83300D1D7EA /* SampleAppTests.swift in Sources */,
+				9166544A29DE69CC003BEF8C /* DetailViewModelTest.swift in Sources */,
+				9166544629DDE6AF003BEF8C /* FavoriteViewModelTest.swift in Sources */,
+				9166544829DDE743003BEF8C /* MockGameStorage.swift in Sources */,
+				9166544429DDE447003BEF8C /* SearchViewModelTest.swift in Sources */,
+				9166543F29DDDDAC003BEF8C /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
